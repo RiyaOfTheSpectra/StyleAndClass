@@ -1,0 +1,40 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ganit}[2021/10/10 My Maths Package]
+
+\RequirePackage{libertinust1math, mathtools, siunitx}
+
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+\newcommand{\abint}{\(\left[a, b\right]\)}
+\newcommand{\D}[1]{\frac{d}{d#1}}
+\newcommand{\norm}[1]{\Abs{\Abs{#1}}}
+\newcommand{\Doh}[2][]{\frac{\partial #1}{\partial #2}}
+\newcommand{\DDoh}[1]{\frac{\partial^2}{\partial #1^2}}
+\newcommand{\dg}{^{\circ}}
+\newcommand{\x}{\mathbf{\hat{x}}}
+\newcommand{\y}{\mathbf{\hat{y}}}
+\newcommand{\z}{\mathbf{\hat{z}}}
+\newcommand{\rhat}{\mathbf{\hat{r}}}
+\newcommand{\that}{\mathbf{\hat{\theta}}}
+\newcommand{\phat}{\mathbf{\hat{\phi}}}
+\newcommand{\perm}[2]{{}^{#1}P_{#2}}
+\newcommand{\tran}[1]{#1^\mathrm{T}}
+
+\newcommand{\RelErrText}[1]{\frac{\sigma_\text{#1}}{\text{#1}}}
+\newcommand{\RelErr}[1]{\frac{\sigma_{#1}}{#1}}
+\newcommand{\RelErrBrac}[1]{\frac{\sigma\left(#1\right)}{#1}}
+\newcommand{\ST}{\ |\ }
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiter\bra{\langle}{\rvert}
+\DeclarePairedDelimiter\ket{\lvert}{\rangle}
+\DeclarePairedDelimiterX\braket[2]{\langle}{\rangle}{#1\,\delimsize\vert\,\mathopen{}#2}
+\DeclarePairedDelimiterX\braopket[3]{\langle}{\rangle}{#1\,\delimsize\vert\,#2\delimsize\vert\,#3}
+
+%\DeclareMathOperator{\curl}{curl}
+%\DeclareMathOperator{\div}{div}
+%\DeclareMathOperator{\grad}{grad}
+
+%\newcommand{\curl}{\nabla\times}
+%\newcommand{\div}{\nabla\cdot}
+
+\newcommand{\lap}{\nabla^2}
