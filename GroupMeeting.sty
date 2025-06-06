@@ -1,0 +1,49 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{GroupMeeting}
+\RequirePackage{mathtools, amsmath}
+\RequirePackage{
+    subcaption,
+    mathspec,
+    fontspec,
+    graphicx,
+    enumitem,
+    booktabs,
+    tabularx,
+    hyperref,
+    caption,
+    float,
+    tikz,
+}
+
+\usetheme{metropolis}
+\usecolortheme[snowy]{owl}
+\setbeamercolor{structure}{fg=violet}
+\setbeamercolor{frametitle}{bg=violet!50}
+
+\usetikzlibrary{decorations.markings}
+
+\metroset{
+    progressbar=frametitle,
+    block=fill,
+    numbering=none,
+}
+
+\graphicspath{ {./} }
+\setsansfont{IBM Plex Sans}
+\setmainfont{Vollkorn}
+
+\newcommand{\MyTitle}[1]{\frametitle{\rmfamily #1}}
+
+\setlist[itemize]{
+    itemsep=0.25em,
+    label=\emph{\bfseries\rmfamily\color{red}–},
+}
+
+\renewcommand{\today}{\twodigit{\the\day}\ \shortmonthname[\month] \the\year}
+
+\DeclareOption{auto}{\title{\rmfamily Progress Report}\author{Riya}}
+\DeclareOption{biber}{\RequirePackage[backend=biber]{biblatex}}
+\DeclareOption{bibtex}{\RequirePackage[backend=bibtex]{biblatex}}
+\DeclareOption{chem}{\RequirePackage{mhchem}}
+\DeclareOption*{\PackageWarning{examplepackage}{Unknown ‘\CurrentOption’}}
+\ProcessOptions\relax

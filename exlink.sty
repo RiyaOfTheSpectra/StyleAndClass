@@ -1,0 +1,32 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{exlink}[2023-07-29 Provides an external link symbol
+because Unicode is a fat bitch who should know better.  Requires tikz
+and hyperref. And redefining \url because the stupid hyperref authors
+thought that numbers in a url should appear in the maths font.]
+
+% Courtesy https://tex.stackexchange.com/questions/99316/symbol-for-external-links
+\newcommand{\ExternalLink}{
+    \tikz[x=1.2ex, y=1.2ex, baseline=-0.5ex]{
+        \begin{scope}[x=1ex, y=1ex]
+            \clip (-0.1,-0.1)
+                --++ (-0, 1.2)
+                --++ (0.6, 0)
+                --++ (0, -0.6)
+                --++ (0.6, 0)
+                --++ (0, -1);
+            \path[draw,
+                line width = 0.5,
+                rounded corners=0.5]
+                (0,0) rectangle (1,1);
+        \end{scope}
+        \path[draw, line width = 0.5] (0.5, 0.5)
+            -- (1, 1);
+        \path[draw, line width = 0.5] (0.6, 1)
+            -- (1, 1) -- (1, 0.6);
+    }
+}
+
+\renewcommand{\url}[1]{\href{#1}{\texttt{#1}\hspace{-0.125em}\ExternalLink}
+\newcommand{\MyURL}[1]{\href{#1}{\texttt{#1}\hspace{-0.125em}\ExternalLink}
+\newcommand{\URL}[2]{\href{#1}{#2 \hspace{-.25em}\ExternalLink}}
+\newcommand{\Mail}[1]{\href{mailto:#1}{\tt #1}
