@@ -37,13 +37,23 @@
 \newcommand{\FrameTitle}[1]{\frametitle{\rmfamily\itshape #1}}
 
 \setlist[itemize,1]{
-    itemsep=0.25em,
     label=\emph{\bfseries\rmfamily\color{red}–},
 }
 \setlist[itemize,2]{
-    nosep,
     label=\emph{\bfseries\rmfamily\color{red!50}–},
-    before={\small}
+}
+\setlist[enumerate,1]{
+    label=\emph{\bfseries\rmfamily\color{red}\arabic*. },
+}
+\setlist[enumerate,2]{
+    label=\emph{\bfseries\rmfamily\color{red!50}\alph*. },
+}
+\setlist[1]{
+    itemsep=0.25em,
+}
+\setlist[2]{
+    nosep,
+    before={\small},
 }
 
 \newcommand{\T}{Progress Report}
