@@ -32,18 +32,27 @@
 \setsansfont{IBM Plex Sans}
 \setmainfont{Vollkorn}
 
-\newcommand{\MyTitle}[1]{\frametitle{\rmfamily\itshape #1}}
+\newcommand{\FrameTitle}[1]{\frametitle{\rmfamily\itshape #1}}
 
 \setlist[itemize]{
     itemsep=0.25em,
     label=\emph{\bfseries\rmfamily\color{red}–},
 }
 
-\renewcommand{\today}{\twodigit{\the\day}\ \shortmonthname[\month] \the\year}
+\newcommand{\T}{Progress Report}
+\newcommand{\A}{Riya}
+\newcommand{\D}{\today}
 
-\DeclareOption{auto}{\title{\rmfamily Progress Report}\author{\rmfamily\itshape Riya}}
+\newcommand{\Title}[1]{\renewcommand{\T}{#1}}
+\newcommand{\Author}[1]{\renewcommand{\A}{#1}}
+\newcommand{\Date}[1]{\renewcommand{\D}{#1}}
+
 \DeclareOption{biber}{\RequirePackage[backend=biber]{biblatex}}
 \DeclareOption{bibtex}{\RequirePackage[backend=bibtex]{biblatex}}
 \DeclareOption{chem}{\RequirePackage{mhchem}}
 \DeclareOption*{\PackageWarning{examplepackage}{Unknown ‘\CurrentOption’}}
 \ProcessOptions\relax
+
+\title{\rmfamily \T}
+\author{\rmfamily\itshape \A}
+\date{\rmfamily\small \D}
