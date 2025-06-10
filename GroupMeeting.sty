@@ -32,11 +32,18 @@
 \setsansfont{IBM Plex Sans}
 \setmainfont{Vollkorn}
 
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
 \newcommand{\FrameTitle}[1]{\frametitle{\rmfamily\itshape #1}}
 
-\setlist[itemize]{
+\setlist[itemize,1]{
     itemsep=0.25em,
     label=\emph{\bfseries\rmfamily\color{red}–},
+}
+\setlist[itemize,2]{
+    nosep,
+    label=\emph{\bfseries\rmfamily\color{red!50}–},
+    before={\small}
 }
 
 \newcommand{\T}{Progress Report}
