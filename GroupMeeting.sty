@@ -10,7 +10,9 @@
     booktabs,
     tabularx,
     hyperref,
+    nicefrac,
     caption,
+    dcolumn,
     float,
     tikz,
 }
@@ -31,6 +33,8 @@
 \graphicspath{ {./} }
 \setsansfont{IBM Plex Sans}
 \setmainfont{Vollkorn}
+
+\renewcommand{\raggedright}{\leftskip=0pt \rightskip=0pt plus 0cm}
 
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 
@@ -56,13 +60,18 @@
     before={\small},
 }
 
-\newcommand{\T}{Progress Report}
+\newcommand{\Sub}{}
+\newcommand{\T}{Progress\, Report}
 \newcommand{\A}{Riya}
 \newcommand{\D}{\today}
+\newcommand{\etal}{\textit{et al}}
 
+\newcommand{\Subtitle}[1]{\renewcommand{\Sub}{#1}}
 \newcommand{\Title}[1]{\renewcommand{\T}{#1}}
 \newcommand{\Author}[1]{\renewcommand{\A}{#1}}
 \newcommand{\Date}[1]{\renewcommand{\D}{#1}}
+
+\newcommand{\Thanks}{\section{\rmfamily\itshape Thank you \& Goodnight!}}
 
 \DeclareOption{biber}{\RequirePackage[backend=biber]{biblatex}}
 \DeclareOption{bibtex}{\RequirePackage[backend=bibtex]{biblatex}}
@@ -70,6 +79,7 @@
 \DeclareOption*{\PackageWarning{examplepackage}{Unknown ‘\CurrentOption’}}
 \ProcessOptions\relax
 
-\title{\rmfamily \T}
+\title{\rmfamily\scshape \T}
 \author{\rmfamily\itshape \A}
 \date{\rmfamily\small \D}
+\subtitle{\rmfamily\itshape \Sub}
