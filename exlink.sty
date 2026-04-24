@@ -1,10 +1,8 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{exlink}[2023-07-29 Provides an external link symbol
-because Unicode is a fat bitch who should know better.  Requires tikz
-and hyperref. And redefining \url because the stupid hyperref authors
-thought that numbers in a url should appear in the maths font.]
+\ProvidesPackage{exlink}[2023-07-09]%[2023-07-29 Provides an external link symbol because Unicode is a fat bitch who should know better.  Requires tikz and hyperref. And redefining \url because the stupid hyperref authors thought that numbers in a url should appear in the maths font.]
 
 % Courtesy https://tex.stackexchange.com/questions/99316/symbol-for-external-links
+
 \newcommand{\ExternalLink}{
     \tikz[x=1.2ex, y=1.2ex, baseline=-0.5ex]{
         \begin{scope}[x=1ex, y=1ex]
