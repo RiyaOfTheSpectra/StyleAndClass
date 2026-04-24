@@ -24,6 +24,8 @@
 \setbeamercolor{frametitle}{bg=violet!50}
 
 \usetikzlibrary{decorations.markings}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{fadings}
 
 \metroset{
     progressbar=frametitle,
@@ -31,9 +33,10 @@
     numbering=none,
 }
 
-\graphicspath{ {./} }
-\setsansfont{IBM Plex Sans}
-\setmainfont{Vollkorn}
+\graphicspath{
+    {./}
+}
+\setsansfont{IBM Plex Sans} \setmainfont{Vollkorn}
 
 \renewcommand{\raggedright}{\leftskip=0pt \rightskip=0pt plus 0cm}
 
@@ -62,11 +65,18 @@
 }
 \arrayrulecolor{red}
 
-\newcommand{\Sub}{}
-\newcommand{\T}{Progress\, Report}
+\tikzfading[
+    name=fade out,
+    inner color=transparent!0,
+    outer color=transparent!100
+]
+
+\newcommand{\T}{}
+\newcommand{\Sub}{Progress\, Report}
 \newcommand{\A}{Riya}
 \newcommand{\D}{\today}
 \newcommand{\etal}{\textit{et al}}
+\newcommand{\Supervisor}{Dr Ashish Arora}
 
 \newcommand{\Subtitle}[1]{\renewcommand{\Sub}{#1}}
 \newcommand{\Title}[1]{\renewcommand{\T}{#1}}
@@ -83,5 +93,10 @@
 
 \title{\rmfamily\scshape \T}
 \author{\rmfamily\itshape \A}
+\addtobeamertemplate{author}{}{\normalshape{\scriptsize Masters thesis
+student\\
+20211010\vskip1.5em}}
+\addtobeamertemplate{author}{}{\itshape\Supervisor\\ {\normalshape\scriptsize
+Supervisor}\vskip1.5em}
 \date{\rmfamily\small \D}
 \subtitle{\rmfamily\itshape \Sub}
